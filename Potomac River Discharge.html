@@ -18,7 +18,7 @@
 
 <body>
   <button type="button" onclick="update()">UPDATE</button></br></br>
-  <svg id="streamgraph"width="1300" height="600">
+  <svg id="streamgraph"width="1350" height="700">
     <g ></g>
   </svg>
 <script>
@@ -66,8 +66,8 @@ var yScale = d3.scaleLinear().domain([0,1000]).range([275,25]);
 //BACKGROUND
 d3.select("#streamgraph")
 .append("rect")
-.attr("width",1300)
-.attr("height",600)
+.attr("width",1350)
+.attr("height",700)
 .style("fill","rgb(235,235,235)")
 
 
@@ -86,11 +86,11 @@ animate(n);
 //FUNCTIONS
 function animate(day){
   
-  current[0].discharge = data.pawpaw[day]/100;
-  current[1].discharge = data.hancock[day]/100;
-  current[2].discharge = data.shepherdstown[day]/100;
-  current[3].discharge = data.pointofrocks[day]/100;
-  current[4].discharge = data.littlefalls[day]/100;
+  current[0].discharge = data.pawpaw[day]/50;
+  current[1].discharge = data.hancock[day]/50;
+  current[2].discharge = data.shepherdstown[day]/50;
+  current[3].discharge = data.pointofrocks[day]/50;
+  current[4].discharge = data.littlefalls[day]/50;
 
   stack = d3.stack() 
   .keys(["discharge"])
