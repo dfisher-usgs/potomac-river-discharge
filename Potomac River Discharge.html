@@ -3,16 +3,6 @@
 <head>
 <title>2021 Potomac River Discharge</title>
 <script src="https://d3js.org/d3.v7.min.js"></script>
-<style>
-  svg rect {
-            fill: rgb(116, 190, 161);
-        }
-        svg text {
-             fill:black;
-            font: 10px sans-serif;
-            text-anchor: end;
-        }
-</style>
 </head>
 
 
@@ -55,8 +45,6 @@ var current = [
     {gage: "Point Of Rocks", mile: 119, month: Date(2021, 0, 23.6), discharge: 145},
     {gage: "Little Falls", mile: 156, month: Date(2021, 0, 31), discharge: 169}
 ];
-
-
 
 var xScale = d3.scaleTime().domain([current[0].mile, current[current.length - 1].mile*.25]).range([0,275]);
 var yScale = d3.scaleLinear().domain([0,1000]).range([275,25]);
@@ -114,8 +102,6 @@ function update(){
   .transition().delay(0).duration(100)
   .attr("d", area)
   .on("end", update);
-
-
 }
 </script>
 </body>
