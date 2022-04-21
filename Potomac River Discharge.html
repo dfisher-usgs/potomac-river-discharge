@@ -111,7 +111,7 @@ area = d3.area()
 function update(){
   d3.selectAll("path")
   .data(function (){ n++; animate(n); console.log(n); return stackedSeries})
-  .transition().delay(0).duration(100)//Animation currently x seconds
+  .transition().delay(0).duration(100)
   .attr("d", area)
   .on("end", update);
 
